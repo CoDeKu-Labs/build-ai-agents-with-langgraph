@@ -2,20 +2,31 @@
 SqliteSaver (memory that survives a restart)
 
 Install:  pip install langgraph langgraph-checkpoint-sqlite
-Needs:    memory_demo_agent.py in the same folder. No API key.
+Needs:    memory_demo_agent.py in the Module 4 root folder.
+          The Module 4 root must be on PYTHONPATH.
+          No API key required.
 
-HOW TO DEMO A REAL RESTART (two separate runs):
-  Run 1:  python lesson_2_10_sqlite_persistence.py
-          type:  I want to visit Tokyo for 3 days
-          type:  My budget is $500 USD
-          type:  quit                              <- the program ENDS
-  Run 2:  python lesson_2_10_sqlite_persistence.py  <- a brand new process
-          type:  What did I tell you?              <- it remembers
+HOW TO DEMO A REAL RESTART:
 
-  Start over with:  python lesson_2_10_sqlite_persistence.py --reset
+Run 1:
+    python persistent-conversation-memory-with-sqlite/sqlite_persistence.py
 
-The memory lives in the file checkpoints.db (add it to .gitignore).
-Note: this is the SYNC saver. For async apps (ainvoke) use AsyncSqliteSaver instead.
+    Type: I want to visit Tokyo for 3 days
+    Type: My budget is $500 USD
+    Type: quit
+
+Run 2:
+    python persistent-conversation-memory-with-sqlite/sqlite_persistence.py
+
+    Type: What did I tell you?
+
+Start over:
+    python persistent-conversation-memory-with-sqlite/sqlite_persistence.py --reset
+
+The memory is stored in checkpoints.db.
+Keep database files in .gitignore.
+
+For async applications, use AsyncSqliteSaver.
 """
 
 import os
