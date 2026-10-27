@@ -1,19 +1,57 @@
+
 # Introduction to Agentic Frameworks & LangGraph
 
-Understand the limitations of simple Python agents, evaluate agentic frameworks, and learn the fundamental building blocks of LangGraph.
+This module introduces the challenges of building AI agents with pure Python, compares popular agentic frameworks, and explains the core concepts of LangGraph.
 
-## Topics
+## Topics Covered
 
-- Why Python-only agent loops become difficult to maintain as workflows grow
-- How CrewAI, AutoGen, and LangGraph differ
-- State, nodes, edges, graph compilation, and execution
+- Production challenges of pure Python agents
+- CrewAI, AutoGen, and LangGraph
+- Graph-based workflows
+- State, nodes, and edges
+- Graph compilation and execution
 
-## Coding lessons
+## Python Examples
 
-| Lesson | Code file(s) | What you build |
-|---|---|---|
-| [LangGraph Fundamentals — State, Nodes & Edges](./langgraph-fundamentals-state-nodes-and-edges/) | `langgraph_basics.py` | Build a basic StateGraph, connect weather and finance nodes, and compare `invoke()` with `stream()`. |
+### Weather & Travel Advisory Agent
 
-## Working with the examples
+**Folder:** `course_01_weather-travel-advisory-agent/`
 
-Add each Python script to its matching lesson folder, install the packages used by that script, and run it from its lesson folder. Configure any required API keys or database connection details through environment variables.
+**File:** `weather_travel_advisory_agent.py`
+
+The final capstone from *Build Your First AI Agent: Tools, Loops & Self-Correction*.
+
+This project uses pure Python, Groq, and external APIs to demonstrate tool calling and a reflection-based quality review.
+
+It is used as a reference when exploring the challenges of basic Python agent implementations.
+
+### LangGraph Fundamentals
+
+**Folder:** `langgraph-fundamentals-state-nodes-and-edges/`
+
+**File:** `langgraph_basics.py`
+
+Build a simple LangGraph workflow using:
+
+- `TypedDict` for state
+- `StateGraph` for graph construction
+- Weather and finance nodes
+- Edges connecting nodes
+- `invoke()` and `stream()` for execution
+
+The weather and currency results in this example are simulated.
+
+## Running the Examples
+
+Install the dependencies using the main repository README.
+
+For the original travel agent, follow the setup instructions inside its folder.
+
+To run the LangGraph example:
+
+```bash
+cd langgraph-fundamentals-state-nodes-and-edges
+python langgraph_basics.py
+```
+
+The LangGraph fundamentals example does not require an API key.
