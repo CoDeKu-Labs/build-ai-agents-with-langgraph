@@ -3,7 +3,7 @@ Async Python basics (sync vs async)
 
 Install:  nothing. asyncio is part of Python's standard library.
           (Do NOT run `pip install asyncio`: that is an old, unrelated package.)
-Run:      python lesson_3_3_async_basics.py
+Run:      python async_basics.py
 
 Three tests with 3 simulated API calls of 2 seconds each:
   1. Synchronous:                    ~6 s
