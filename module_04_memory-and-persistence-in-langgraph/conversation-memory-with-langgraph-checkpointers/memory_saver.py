@@ -2,14 +2,16 @@
 Checkpointers and MemorySaver (in-memory persistence)
 
 Install:  pip install langgraph
-Run:      python lesson_4_1_memory_saver.py
-Needs:    memory_demo_agent.py in the same folder. No API key.
+Run:      python conversation-memory-with-langgraph-checkpointers/memory_saver.py
+Needs:    memory_demo_agent.py in the Module 4 root folder.
+          The Module 4 root must be on PYTHONPATH.
+          No API key required.
 
 Four tests:
-  0. No checkpointer:   the agent forgets everything between calls
-  1. MemorySaver:       the agent remembers (same thread_id)
-  2. Another thread_id: a separate conversation, nothing shared
-  3. 'Restart':         a NEW MemorySaver is empty, so the memory is gone
+  0. No checkpointer: The agent forgets between calls.
+  1. MemorySaver: Remembers conversations with the same thread_id.
+  2. Different thread_id: Maintains separate conversations.
+  3. Simulated restart: A new MemorySaver has no previous state.
 """
 
 from memory_demo_agent import build_graph, say, saved_user_messages
