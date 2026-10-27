@@ -2,7 +2,7 @@
 async LangGraph, serving several users at once
 
 Install:  pip install langgraph
-Run:      python lesson_3_3_async_langgraph.py
+Run:      python async_langgraph.py
 
 Two rules for async LangGraph:
   1. Write nodes as `async def` and use `await` for anything that waits.
