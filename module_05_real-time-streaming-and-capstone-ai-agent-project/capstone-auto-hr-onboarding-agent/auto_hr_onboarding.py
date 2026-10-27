@@ -10,10 +10,10 @@ Optional:
   GROQ_MODEL in your .env
 
 Run:
-  python lesson_2_13_capstone_auto_hr_UPDATED.py
-  python lesson_2_13_capstone_auto_hr_UPDATED.py --demo
-  python lesson_2_13_capstone_auto_hr_UPDATED.py --demo-reject
-  python lesson_2_13_capstone_auto_hr_UPDATED.py --reset
+  python auto_hr_onboarding.py
+  python auto_hr_onboarding.py --demo
+  python auto_hr_onboarding.py --demo-reject
+  python auto_hr_onboarding.py --reset
 
 Graph:
   START -> extract -> validate
