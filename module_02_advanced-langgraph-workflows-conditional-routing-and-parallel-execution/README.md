@@ -1,20 +1,73 @@
-# Advanced LangGraph Workflows — Conditional Routing & Parallel Execution
 
-Build dynamic, tool-using LangGraph workflows and run independent graph nodes concurrently.
+# Advanced LangGraph Workflows: Conditional Routing & Parallel Execution
 
-## Topics
+Learn how to create dynamic AI workflows using conditional edges, tool calling, and parallel node execution in LangGraph.
 
-- LLM tool binding and conditional edges
-- Conversation state with message reducers
-- Fan-out/fan-in workflows and safe state merging
+## Topics Covered
 
-## Coding lessons
+- LLM-driven tool selection
+- Conditional edges and routing functions
+- Tool execution nodes
+- Conversation state with `add_messages`
+- Sequential vs. parallel execution
+- Fan-out and fan-in workflows
+- State reducers
 
-| Lesson | Code file(s) | What you build |
-|---|---|---|
-| [Conditional Edges — Model-Driven Routing](./conditional-edges-model-driven-routing/) | `conditional_edges.py` | Build an agent with LLM, tool, and router nodes; select paths with conditional edges and test tool calls. |
-| [Parallel Execution in LangGraph](./parallel-execution-in-langgraph/) | `parallel_execution.py` | Compare sequential and parallel graphs, merge independent results, and use reducers for shared fields. |
+## Python Examples
 
-## Working with the examples
+### Conditional Routing
 
-Add each Python script to its matching lesson folder, install the packages used by that script, and run it from its lesson folder. Configure any required API keys or database connection details through environment variables.
+**Folder:** `conditional-edges-model-driven-routing/`
+
+**File:** `conditional_routing.py`
+
+Build a tool-using LangGraph agent with:
+
+- Weather and currency conversion tools
+- Groq LLM integration
+- `bind_tools()` for tool selection
+- LLM, tool, and router nodes
+- Conditional edges and execution loops
+- Conversation state management
+
+The tools use simulated weather and exchange-rate data.
+
+**Run:**
+
+```bash
+cd conditional-edges-model-driven-routing
+python conditional_routing.py
+```
+
+Requires `GROQ_API_KEY` in your `.env` file.
+
+### Parallel Execution
+
+**Folder:** `parallel-execution-in-langgraph/`
+
+**File:** `parallel_execution.py`
+
+Compare sequential and parallel execution using the same workflow nodes.
+
+This example demonstrates:
+
+- Sequential execution
+- Parallel node execution
+- Fan-out and fan-in
+- State merging with reducers
+- Execution time comparison
+
+The program simulates slow API calls using `time.sleep()`.
+
+**Run:**
+
+```bash
+cd parallel-execution-in-langgraph
+python parallel_execution.py
+```
+
+No API key is required.
+
+## Installation
+
+All dependencies are covered by the main repository README.
