@@ -1,29 +1,95 @@
+
 # Build AI Agents with LangGraph: Workflows, Memory & Streaming
 
-This repository organizes the Python examples from the Zero-to-Hero Agent Roadmap LangGraph course. The folders follow the module topics; each coding lesson has its own directory. Conceptual lessons without Python code are covered within the relevant module README rather than given empty lesson directories.
+Python code and practical examples for the second course in the Zero-to-Hero Agent Roadmap.
 
-## Modules
+This repository covers LangGraph workflows, tool calling, conditional routing, parallel execution, Pydantic validation, asynchronous Python, conversation memory, database persistence, and real-time streaming.
 
-| Module | Focus |
+## Course Modules
+
+| Module | Topics |
 |---|---|
-| [Introduction to Agentic Frameworks & LangGraph](./introduction-to-agentic-frameworks-and-langgraph/) | Understand the limitations of simple Python agents, evaluate agentic frameworks, and learn the fundamental building blocks of LangGraph. |
-| [Advanced LangGraph Workflows — Conditional Routing & Parallel Execution](./advanced-langgraph-workflows-conditional-routing-and-parallel-execution/) | Build dynamic, tool-using LangGraph workflows and run independent graph nodes concurrently. |
-| [Data Validation, Structured Outputs & Async AI Agents](./data-validation-structured-outputs-and-async-ai-agents/) | Validate agent inputs and outputs, and use asynchronous Python to handle I/O-bound work efficiently. |
-| [Memory & Persistence in LangGraph](./memory-and-persistence-in-langgraph/) | Use checkpointers to preserve and resume conversation state, first in RAM and then in SQLite and PostgreSQL. |
-| [Real-Time Streaming & Capstone AI Agent Project](./real-time-streaming-and-capstone-ai-agent-project/) | Stream agent progress and LLM responses, then integrate course concepts into an Auto-HR Onboarding Agent. |
+| [Introduction to Agentic Frameworks & LangGraph](./module_01_introduction-to-agentic-frameworks-and-langgraph/) | Agent frameworks, production challenges, state, nodes, and edges |
+| [Advanced LangGraph Workflows](./module_02_advanced-langgraph-workflows-conditional-routing-and-parallel-execution/) | Conditional routing, tool calling, and parallel execution |
+| [Data Validation, Structured Outputs & Async AI Agents](./module_03_data-validation-structured-outputs-and-async-ai-agents/) | Pydantic, structured outputs, and async Python |
+| [Memory & Persistence in LangGraph](./module_04_memory-and-persistence-in-langgraph/) | MemorySaver, SQLite, and PostgreSQL |
+| [Real-Time Streaming & Capstone](./module_05_real-time-streaming-and-capstone-ai-agent-project/) | Streaming responses and Auto-HR Onboarding Agent |
 
-## Repository layout
+Each module contains a README with its code examples and execution instructions.
 
-Each module contains a README with its concepts and corresponding coding lessons. Lesson directories are named for their topics rather than numbered. A few lessons contain multiple Python scripts, while the memory module includes one helper shared across its examples.
+## Requirements
 
-## Getting started
+- Python 3.11 or newer
+- pip
+- Groq API key for LLM-based examples
+- Docker for the PostgreSQL demonstration
 
-1. Open the README inside the module you are studying.
-2. Add the Python source files listed there to the matching lesson folders.
-3. Install the packages used in the example, set up any required environment variables, and run the script.
+## Installation
 
-The source scripts are not included in this folder template; add the original lesson code before running the examples. Remove each `.gitkeep` file after adding its Python script.
+Clone the repository and navigate to the project directory.
 
-## Capstone
+Create a virtual environment:
 
-**Auto-HR Onboarding Agent** — A LangGraph workflow that extracts employee information, validates inputs with Pydantic, requests missing details, uses simulated approval rules, stores conversation state using SQLite, and streams responses.
+```bash
+python -m venv .venv
+```
+
+Activate it:
+
+**Windows:**
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+```bash
+source .venv/bin/activate
+```
+
+Install all required Python packages:
+
+```bash
+python -m pip install -U langgraph langchain-core langchain-groq groq pydantic python-dotenv requests langgraph-checkpoint-sqlite aiosqlite langgraph-checkpoint-postgres "psycopg[binary,pool]"
+```
+
+This installs the dependencies used throughout the course. You only need to install them once in your virtual environment.
+
+## Environment Variables
+
+Create a `.env` file in the repository root:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+GROQ_MODEL=openai/gpt-oss-120b
+```
+
+- `GROQ_API_KEY` is required for examples using Groq models.
+- `GROQ_MODEL` is optional. You can change it to another supported Groq model.
+
+The PostgreSQL lesson also requires a `DATABASE_URL`. Its module README includes the database setup instructions.
+
+Do not commit your `.env` file to GitHub.
+
+## Running the Examples
+
+1. Open the module you want to study.
+2. Read its `README.md`.
+3. Navigate to the relevant lesson folder.
+4. Run the Python script using `python filename.py`.
+
+Some examples use simulated data and do not require an API key. Others connect to Groq or external APIs.
+
+## Capstone Project
+
+### Auto-HR Onboarding Agent
+
+Build an AI agent that:
+
+- Extracts employee information using an LLM
+- Validates data with Pydantic
+- Requests missing or invalid information
+- Uses conditional routing and simulated approval rules
+- Saves conversation state with SQLite
+- Streams workflow progress and responses
+
+The project combines the main concepts covered throughout the course.
