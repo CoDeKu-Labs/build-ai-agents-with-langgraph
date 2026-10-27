@@ -2,7 +2,7 @@
 Pydantic input validation
 
 Install:  pip install pydantic
-Run:      python lesson_3_1_pydantic_validation.py
+Run:      python pydantic_validation.py
 
 No API key needed. This lesson validates the data that comes INTO your agent,
 before it reaches the LLM or any tool.
