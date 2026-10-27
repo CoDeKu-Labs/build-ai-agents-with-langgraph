@@ -2,7 +2,9 @@
 PostgresSaver (production persistence) and thread isolation
 
 Install:  pip install langgraph langgraph-checkpoint-postgres "psycopg[binary,pool]" python-dotenv
-Needs:    memory_demo_agent.py in the same folder. No API key.
+Needs:    memory_demo_agent.py in the Module 4 root folder.
+          The Module 4 root must be on PYTHONPATH.
+          No API key required.
 
 Start a local database (Docker must be running). POSTGRES_DB creates the database
 named in DATABASE_URL, otherwise the connection fails:
