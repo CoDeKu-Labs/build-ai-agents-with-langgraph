@@ -2,7 +2,7 @@
 Parallel node execution (fan-out / fan-in)
 
 Install:  pip install langgraph
-Run:      python lesson_2_7_parallel_execution.py
+Run:      python parallel_execution.py
 
 This file builds the SAME three nodes twice:
   1. Sequential graph:  weather -> finance -> report
